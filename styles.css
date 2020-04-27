@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   display: flex;
-  background: #0f0f0f;
+  background: #dbaf37;
 }
 
 .game-section {
@@ -46,7 +46,7 @@ body {
   padding: 20px;
   position: absolute;
   border-radius: 5px;
-  background: #1f1f1f;
+  background: #bdbab1;
   backface-visibility: hidden;
 }
 

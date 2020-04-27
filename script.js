@@ -21,7 +21,7 @@ function turn(){
 }
 
 function evaluateChoice(){
-  let isMatch = firstChoice.dataset.framework === secondChoice.dataset.framework;
+  let isMatch = firstChoice.dataset.id === secondChoice.dataset.id;
 
   isMatch ? denyTurn() : turnBack();
 }
