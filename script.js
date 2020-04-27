@@ -38,7 +38,7 @@ function turnBack(){
 
   setTimeout(() => {
     firstChoice.classList.remove('flip');
-    firstChoice.classList.remove('flip');
+    secondChoice.classList.remove('flip');
 
     resetBoard();
   }, 1500);
