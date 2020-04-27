@@ -54,15 +54,28 @@ function resetBoard() {
   [firstChoice, secondChoice] = [null, null];
 }
 
+function resetAll(){
+  location.reload();
+  //resetBoard();
+  //shuffle();
+}
+
 function gameOver(){
   document.getElementById("modal-on").click();
 }
 
-(function shuffle() {
+(function shuffleStart() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 8);
     card.style.order = randomPos;
   });
 })();
+
+function shuffle() {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 8);
+    card.style.order = randomPos;
+  });
+}
 
 cards.forEach(card => card.addEventListener('click', turn));
