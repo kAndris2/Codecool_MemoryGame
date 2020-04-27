@@ -4,6 +4,7 @@ let turned = false;
 let noturn = false;
 
 let firstChoice, secondChoice;
+var allPoints = 0;
 
 function turn(){
   if (noturn) return;
@@ -22,7 +23,10 @@ function turn(){
 
 function evaluateChoice(){
   let isMatch = firstChoice.dataset.id === secondChoice.dataset.id;
-
+  if (isMatch) {
+    allPoints += 1;
+        document.getElementById("points").innerHTML = allPoints;
+  }
   isMatch ? denyTurn() : turnBack();
 }
 
