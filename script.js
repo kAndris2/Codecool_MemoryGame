@@ -8,12 +8,12 @@ var allPoints = 0;
 let myTimer = null;
 
 window.onload = function () {
-    display = document.querySelector('#time');
-    startTimer(60, display);
+  display = document.querySelector('#time');
+  startTimer(60, display);
 };
 
 
-function turn(){
+function turn() {
   if (noturn) return;
   if (this === firstChoice) return;
 
@@ -24,28 +24,28 @@ function turn(){
     firstChoice = this;
     return;
   }
-   secondChoice = this;
-   evaluateChoice();
+  secondChoice = this;
+  evaluateChoice();
 }
 
-function evaluateChoice(){
+function evaluateChoice() {
   let isMatch = firstChoice.dataset.id === secondChoice.dataset.id;
   if (isMatch) {
     allPoints += 1;
-    document.getElementById("points").innerHTML = allPoints;
+    document.getElementById("points").innerHTML = "Points: " + allPoints;
     if (allPoints === (cards.length / 2)) gameOver();
   }
   isMatch ? denyTurn() : turnBack();
 }
 
-function denyTurn(){
+function denyTurn() {
   firstChoice.removeEventListener('click', turn);
   secondChoice.removeEventListener('click', turn);
 
   resetBoard();
 }
 
-function turnBack(){
+function turnBack() {
   noturn = true;
 
   setTimeout(() => {
@@ -61,13 +61,13 @@ function resetBoard() {
   [firstChoice, secondChoice] = [null, null];
 }
 
-function resetAll(){
+function resetAll() {
   location.reload();
   //resetBoard();
   //shuffle();
 }
 
-function gameOver(){
+function gameOver() {
   clearInterval(myTimer);
   document.getElementById("modal-on").click();
 }
@@ -89,22 +89,23 @@ function shuffle() {
 cards.forEach(card => card.addEventListener('click', turn));
 
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    myTimer = setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
+  var timer = duration, minutes, seconds;
+  myTimer = setInterval(function () {
+    minutes = parseInt(timer / 60, 10)
+    seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
+    if (--timer < 0) {
+      timer = duration;
+    }
+    else if (timer === 0) {
+      clearInterval(myTimer);
+      document.getElementById("time-over").click();
+    }
 
-        if (--timer < 0) {
-            timer = duration;
-        }
-        else if(timer === 0){
-          clearInterval(myTimer);
-          document.getElementById("time-over").click();
-        }
-    }, 1000);
+    display.textContent = minutes + ":" + seconds;
+
+  }, 1000);
 }

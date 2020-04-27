@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Merriweather";
 }
 
 body {
@@ -11,8 +12,8 @@ body {
 }
 
 .game-section {
-  width: 640px;
-  height: 640px;
+  width: 1024px;
+  height: 768px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -20,14 +21,20 @@ body {
 }
 
 .card {
-  width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
+  width: calc(25% - 1rem);
+  height: calc(33.333% - 1rem);
   margin: 5px;
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: transform .5s;
+  transition: all .5s;
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  cursor: pointer;
+}
+
+.card:hover
+{
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, .4);
 }
 
 .card:active {
@@ -48,8 +55,33 @@ body {
   border-radius: 5px;
   background: #bdbab1;
   backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .front {
   transform: rotateY(180deg);
+}
+
+.info-box
+{
+  text-align: center;
+  background-color: white;
+  box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.274);
+  width: 16rem;
+}
+
+#points
+{
+  padding: 16px 16px;
+  color: rgb(33, 148, 214);
+  font-size: x-large;
+}
+
+#time
+{
+  padding: 16px 16px;
+  color: rgb(120, 236, 43); /*Maybe change color if time gets to 10 seconds?*/
+  font-size: x-large;
 }
