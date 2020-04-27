@@ -6,6 +6,12 @@ let noturn = false;
 let firstChoice, secondChoice;
 var allPoints = 0;
 
+window.onload = function () {
+    display = document.querySelector('#time');
+    startTimer(60, display);
+};
+
+
 function turn(){
   if (noturn) return;
   if (this === firstChoice) return;
@@ -79,3 +85,20 @@ function shuffle() {
 }
 
 cards.forEach(card => card.addEventListener('click', turn));
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
