@@ -25,7 +25,8 @@ function evaluateChoice(){
   let isMatch = firstChoice.dataset.id === secondChoice.dataset.id;
   if (isMatch) {
     allPoints += 1;
-        document.getElementById("points").innerHTML = allPoints;
+    document.getElementById("points").innerHTML = allPoints;
+    if (allPoints === (cards.length / 2)) gameOver();
   }
   isMatch ? denyTurn() : turnBack();
 }
@@ -45,13 +46,16 @@ function turnBack(){
     secondChoice.classList.remove('flip');
 
     resetBoard();
-  }, 1500);
+  }, 1000);
 }
-
 
 function resetBoard() {
   [turned, noturn] = [false, false];
   [firstChoice, secondChoice] = [null, null];
+}
+
+function gameOver(){
+  document.getElementById("modal-on").click();
 }
 
 (function shuffle() {
