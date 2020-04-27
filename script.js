@@ -103,7 +103,8 @@ function startTimer(duration, display) {
             timer = duration;
         }
         else if(timer === 0){
-          resetAll();
+          clearInterval(myTimer);
+          document.getElementById("time-over").click();
         }
     }, 1000);
 }
