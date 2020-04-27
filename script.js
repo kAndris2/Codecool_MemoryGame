@@ -5,6 +5,7 @@ let noturn = false;
 
 let firstChoice, secondChoice;
 var allPoints = 0;
+let myTimer = null;
 
 window.onload = function () {
     display = document.querySelector('#time');
@@ -67,6 +68,7 @@ function resetAll(){
 }
 
 function gameOver(){
+  clearInterval(myTimer);
   document.getElementById("modal-on").click();
 }
 
@@ -88,7 +90,7 @@ cards.forEach(card => card.addEventListener('click', turn));
 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
-    setInterval(function () {
+    myTimer = setInterval(function () {
         minutes = parseInt(timer / 60, 10)
         seconds = parseInt(timer % 60, 10);
 
