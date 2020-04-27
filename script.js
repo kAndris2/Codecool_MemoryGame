@@ -100,5 +100,8 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = duration;
         }
+        else if(timer === 0){
+          resetAll();
+        }
     }, 1000);
 }
