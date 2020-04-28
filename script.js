@@ -32,6 +32,7 @@ function evaluateChoice() {
   let isMatch = firstChoice.dataset.id === secondChoice.dataset.id;
   if (isMatch) {
     allPoints += 1;
+    tick();
     document.getElementById("points").innerHTML = "Points: " + allPoints;
     if (allPoints === (cards.length / 2)) gameOver();
   }
@@ -108,4 +109,13 @@ function startTimer(duration, display) {
     display.textContent = minutes + ":" + seconds;
 
   }, 1000);
+}
+//TICK nek
+function tick(){
+  var element = document.getElementById("trigger");
+  element.style.display="block";
+  element.classList.toggle("drawn");
+  setTimeout(() => { element.classList.toggle("drawn") ; }, 700);
+
+
 }

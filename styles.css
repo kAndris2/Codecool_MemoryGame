@@ -85,3 +85,39 @@ body {
   color: rgb(120, 236, 43); /*Maybe change color if time gets to 10 seconds?*/
   font-size: x-large;
 }
+
+/*TICK nek*/
+.tick-container {
+  position:fixed;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 50%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+.circ{
+    opacity: 0;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    -ms-transition: all 0.7s;
+    -o-transition: all 0.7s;
+    transition: all 0.7s;
+}
+.tick{
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    -webkit-transition: stroke-dashoffset 0.7s 0.3s ease-out;
+    -moz-transition: stroke-dashoffset 0.7s 0.3s ease-out;
+    -ms-transition: stroke-dashoffset 0.7s 0.3s ease-out;
+    -o-transition: stroke-dashoffset 0.7s 0.3s ease-out;
+    transition: stroke-dashoffset 0.7s 0.3s ease-out;
+}
+.drawn + svg .path{
+    opacity: 1;
+    stroke-dashoffset: 0;
+
+}
