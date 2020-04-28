@@ -115,7 +115,7 @@ function tick(){
   var element = document.getElementById("trigger");
   document.getElementById("trigcont").style.zIndex = "10";
   element.classList.toggle("drawn");
-  setTimeout(() => { element.classList.toggle("drawn") ; }, 700);
-  //setTimeout(() => {document.getElementById("trigcont").style.zIndex = "-10";},100);
+  setTimeout(() => { element.classList.toggle("drawn") ;  document.getElementById("trigcont").style.zIndex = "-10"; }, 800);
+
 
 }

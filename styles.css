@@ -114,7 +114,7 @@ body {
     -moz-transition: stroke-dashoffset 0.7s 0.3s ease-out;
     -ms-transition: stroke-dashoffset 0.7s 0.3s ease-out;
     -o-transition: stroke-dashoffset 0.7s 0.3s ease-out;
-    transition: stroke-dashoffset 0.7s 0.3s ease-out;
+    transition: stroke-dashoffset 0.7 0.3s ease-out;
 }
 .drawn + svg .path{
     opacity: 1;
