@@ -113,9 +113,9 @@ function startTimer(duration, display) {
 //TICK nek
 function tick(){
   var element = document.getElementById("trigger");
-  element.style.display="block";
+  document.getElementById("trigcont").style.zIndex = "10";
   element.classList.toggle("drawn");
   setTimeout(() => { element.classList.toggle("drawn") ; }, 700);
-
+  //setTimeout(() => {document.getElementById("trigcont").style.zIndex = "-10";},100);
 
 }
