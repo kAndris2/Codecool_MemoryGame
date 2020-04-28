@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Merriweather";
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
 
 .card {
   width: calc(25% - 1rem);
-  height: calc(33.333% - 1rem);
+  height: calc(33% - 1rem);
   margin: 5px;
   position: relative;
   transform: scale(1);

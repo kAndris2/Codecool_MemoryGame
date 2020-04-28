@@ -74,14 +74,14 @@ function gameOver() {
 
 (function shuffleStart() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 8);
+    let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
 })();
 
 function shuffle() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 8);
+    let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
 }
